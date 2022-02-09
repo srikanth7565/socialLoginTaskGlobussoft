@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0", 
+      "title": "Social login Project for Globussoft",
+      "description": "Social login Project Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "login",
+        "description": "API for login system"
+      }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/": {
+          "get": {
+            "tags": ["/root"],
+            "summary": "starting login register page in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/root"
+                }
+              }
+            }
+          }
+        }
+      },
+      "definitions": {
+        "/": {
+          "required": ["name", "_id", "email","login"],
+          "properties": {
+            "_id": {
+              "type": "string",
+              "uniqueItems": true
+            },
+            "name": {
+              "type": "string"
+            },
+
+            "email": {
+              "type": "string"
+            },
+            "login": {
+                "type": "string"
+              }
+          }
+        }
+      }
+  }
